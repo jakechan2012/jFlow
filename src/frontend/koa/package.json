@@ -1,0 +1,23 @@
+{
+  "name": "",
+  "scripts": {
+    "start:dev": "nodemon"
+  },
+  "dependencies": {
+    "koa": "^2.6.2",
+    "koa-body": "^4.0.4",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.47",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa-router": "^7.0.35",
+    "@types/koa-static": "^4.0.0",
+    "@types/node": "^10.12.12",
+    "nodemon": "^1.18.7",
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.1"
+  }
+}

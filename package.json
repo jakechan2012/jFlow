@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "install:ng": "cd ./src/frontend/angular && npm install",
+    "install:koa": "cd ./src/frontend/koa && npm install",
+    "restore:dotnet": "cd ./src/backend && dotnet restore",
+    "install": "npm run install:ng && npm run install:koa && npm run restore:dotnet",
+    "start": "concurrently \"npm run start:dev:ng\" \"npm run start:dev:koa\" \"npm run start:dev:dotnet\"",
+    "start:dev:ng": "cd ./src/frontend/angular && npm run start:dev",
+    "start:dev:koa": "cd ./src/frontend/koa && npm run start:dev",
+    "start:dev:dotnet": "cd ./src/backend/J.Flow.Api && dotnet watch run"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
