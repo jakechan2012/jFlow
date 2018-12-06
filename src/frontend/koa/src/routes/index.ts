@@ -1,15 +1,13 @@
 import Router from 'koa-router';
-import body from 'koa-body';
+import proxy from 'koa-better-http-proxy';
 import path from 'path';
 import fs from 'fs';
+import config from '../config.json';
 
 const router = new Router();
+const { host: backendHost, port: backendPort } = config.backend;
 
-router.all('/api/*', async ctx => {
-  console.log(1);
-  ctx.body = null;
-  ctx.status = 202;
-});
+router.all('/api/*', proxy(backendHost, { port: backendPort }), async ctx => {});
 
 router.all('*', async ctx => {
   if (process.env.NODE_ENV === 'Development') {
